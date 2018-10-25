@@ -12,6 +12,8 @@
  },
  "rules": {
      "no-console": "off",
-     "semi": "warn"
+     "semi": "warn",
+     "no-unused-vars": "warn",
+     "no-undef": "warn"
  }
 }
