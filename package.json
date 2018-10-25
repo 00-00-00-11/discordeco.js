@@ -1,0 +1,38 @@
+{
+  "name": "discord-economy",
+  "version": "0.1.0",
+  "description": "Economy package for Discord bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hazmi35/discord-economy.git"
+  },
+  "keywords": [
+    "Discord",
+    "Economy",
+    "discord-economy",
+    "discord.js",
+    "discordjs",
+    "discord",
+    "bot",
+    "discordbot",
+    "discord",
+    "economy"
+  ],
+  "author": "Hazmi35",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Hazmi35/discord-economy/issues"
+  },
+  "homepage": "https://github.com/Hazmi35/discord-economy#readme",
+  "dependencies": {
+    "makeerror": "^1.0.11",
+    "sqlite3": "^4.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^5.7.0"
+  }
+}
