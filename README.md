@@ -1,2 +1,2 @@
 # discord-economy
-[WIP] A Simple Package for Economy sysem in discord bots!
+[WIP] A Simple Package for Economy system in discord bots!
