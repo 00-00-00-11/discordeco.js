@@ -8,8 +8,8 @@ const InputError = makeError('InputError'); //eslint-disable-line no-unused-vars
  */
 module.exports = class DiscordEconomy {
     /**
-     * Fetches a balance from userID
-     * @param {String} opt userID from an user in Discord
+     * Client Option
+     * @param {String} opt Default Balance (Default : 0);
      */
     constructor(opt) {
         if (opt) {

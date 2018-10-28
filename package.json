@@ -1,5 +1,5 @@
 {
-  "name": "discord-economy",
+  "name": "discordeco.js",
   "version": "0.3.0-b",
   "description": "Economy package for Discord bot",
   "main": "index.js",
@@ -13,7 +13,7 @@
   "keywords": [
     "Discord",
     "Economy",
-    "discord-economy",
+    "discordeco.js",
     "discord.js",
     "discordjs",
     "discord",
