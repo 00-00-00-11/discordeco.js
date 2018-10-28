@@ -44,6 +44,10 @@ module.exports = class DiscordEconomy {
             return fetchBalance;
         };
 
+        this.setBalance = (ID, money) => {
+            //TODO: DO THIS
+        };
+
         //end of functions
     }
 };
