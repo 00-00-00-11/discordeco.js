@@ -1,6 +1,6 @@
 {
-  "name": "discord-economy",
-  "version": "0.3.0-b",
+  "name": "discordeco.js",
+  "version": "0.3.4-b",
   "description": "Economy package for Discord bot",
   "main": "index.js",
   "scripts": {
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hazmi35/discord-economy.git"
+    "url": "git+https://github.com/Hazmi35/discordeco.js.git"
   },
   "keywords": [
     "Discord",
     "Economy",
-    "discord-economy",
+    "discordeco.js",
     "discord.js",
     "discordjs",
     "discord",
@@ -25,9 +25,9 @@
   "author": "Hazmi35",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Hazmi35/discord-economy/issues"
+    "url": "https://github.com/Hazmi35/discordeco.js/issues"
   },
-  "homepage": "https://github.com/Hazmi35/discord-economy#readme",
+  "homepage": "https://github.com/Hazmi35/discordeco.js#readme",
   "dependencies": {
     "lodash": "^4.17.11",
     "makeerror": "^1.0.11",
