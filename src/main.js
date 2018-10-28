@@ -15,16 +15,33 @@ module.exports = class DiscordEconomy {
 
         //begin of functions
 
-        this.fetchBalance = function (ID) { //eslint-disable-line no-unused-vars
+        this.fetchBalance = (ID) => { //eslint-disable-line no-unused-vars
+            const fetchBalance = new Promise((resolve) => {
                 if (!ID) return new InputError('Please input user ID to fetch the balance');
                 if (isNaN(ID)) return new InputError('Invalid ID');
-                db.get(`SELECT * FROM economy WHERE userID = '${ID}'`, (err, row) => { //eslint-disable-line
-                    if (!row) {
-                        insertFirstMoney(ID); //eslint-disable-line
-                    } else {
-                        console.log(row.money); //TODO: Make this function return a money from row.
-                    }
-                });
+
+                function getBalance(ID) {
+                    db.get(`SELECT * FROM economy WHERE userID = '${ID}'`, (err, row) => { //eslint-disable-line
+                        if (!row) {
+                            insertFirstMoney(ID); //eslint-disable-line
+                        } else {
+                            resolveDB(row);
+                        }
+                    });
+                }
+                getBalance(ID);
+
+                function resolveDB(data) {
+                    return resolve(lodash.toNumber(data.money)) //eslint-disable-line
+                }
+
+                function insertFirstMoney(userID) {
+                    var stmt = db.prepare(`INSERT INTO economy (userID, money) VALUES (?,?)`);
+                    stmt.run(userID, defaultBalance);
+                    return getBalance(ID);
+                }
+            });
+            return fetchBalance;
         };
 
         //end of functions
