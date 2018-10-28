@@ -12,15 +12,15 @@ npm install discordeco.js
 
 ## Usage
 ```js
-const Economy = require("discordeco.js");
+const Economy = require("discordeco.js"); //Import Economy package
 
-const eco = new Eco();
+const eco = new Economy('1000'); //NOTE : 1000 on this line is a default balance
 
-eco.fetchBalance('userID').then(money => {
-    console.log(money);
+eco.fetchBalance('userID').then(money => { //Fetches balance from an userID
+    console.log(money); //log the money
 });
 
-eco.updateBalance('userID', 5000).then(newBalance => {
-    console.log(money);
+eco.updateBalance('userID', 5000).then(newBalance => { //note : .then(newBalance => { is optional
+    console.log(newBalance);
 });
 ```
