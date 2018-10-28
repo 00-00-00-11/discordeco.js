@@ -1,6 +1,6 @@
 {
   "name": "discord-economy",
-  "version": "0.1.0",
+  "version": "0.3.0-b",
   "description": "Economy package for Discord bot",
   "main": "index.js",
   "scripts": {

@@ -64,3 +64,4 @@ typings/
 # Misc
 .sqlite
 .db
+economy.sqlite
