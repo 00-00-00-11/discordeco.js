@@ -11,7 +11,7 @@ npm install discordeco.js
 
 ## Usage
 ```js
-const Economy = require("random-meow");
+const Economy = require("discordeco.js");
 
 const eco = new Eco();
 
