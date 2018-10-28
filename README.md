@@ -1,5 +1,5 @@
 # discordeco.js
-A Simple Package for Economy system in discord bots!
+A Simple Package for an Economy system in discord bots!
 
 [![N|Solid](https://nodei.co/npm/discordeco.js.png?downloads=true&stars=false)](https://www.npmjs.org/package/discordeco.js)
 
