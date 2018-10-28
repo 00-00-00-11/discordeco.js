@@ -1,6 +1,6 @@
 {
   "name": "discordeco.js",
-  "version": "0.3.0-b",
+  "version": "0.3.1-b",
   "description": "Economy package for Discord bot",
   "main": "index.js",
   "scripts": {
