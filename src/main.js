@@ -100,6 +100,10 @@ module.exports = class DiscordEconomy {
             return updateBalance;
         };
 
+        this.resetBalance = (ID) => { //eslint-disable-line
+            //TODO: Make this!
+        };
+        
         //end of functions
     }
 };
