@@ -4,6 +4,8 @@ A Simple Package for an Economy system in discord bots!
 <div align="center">
     <p>
     <a href="https://npmjs.com/package/discordeco.js"><img src="https://nodei.co/npm/discordeco.js.png?downloads=true&stars=false"/></a>
+    <br>
+    <a href="https://travis-ci.org/discordjs/discord.js"><img src="https://travis-ci.org/Hazmi35/discordeco.js.svg"/></a>
     </p>
 </div>
 
