@@ -1,4 +1,4 @@
-var Sqlite = require('sqlite3').verbose();
+const { Database } = require('sqlite3');
 var lodash = require('lodash'); //eslint-disable-line no-unused-vars
 const makeError = require('makeerror'); //eslint-disable-line
 const InputError = makeError('InputError'); //eslint-disable-line no-unused-vars
@@ -17,7 +17,7 @@ module.exports = class DiscordEconomy {
         } else {
             var defaultBalance = 0; //eslint-disable-line
         }
-        var db = new Sqlite.Database('economy.sqlite');
+        var db = new Database('economy.sqlite');
         db.run("CREATE TABLE IF NOT EXISTS economy (userID TEXT, money INTEGER)");
 
         //begin of functions
@@ -28,10 +28,9 @@ module.exports = class DiscordEconomy {
          * @returns {Promise} A promise that contains user balance / money
          */
         this.fetchBalance = (ID) => { //eslint-disable-line no-unused-vars
+            if (!ID) return new InputError('Please input user ID to fetch the balance');
+            if (isNaN(ID)) return new InputError('Invalid ID');
             const fetchBalance = new Promise((resolve) => {
-                if (!ID) return new InputError('Please input user ID to fetch the balance');
-                if (isNaN(ID)) return new InputError('Invalid ID');
-
                 function getBalance(ID) {
                     db.get(`SELECT * FROM economy WHERE userID = '${ID}'`, (err, row) => { //eslint-disable-line
                         if (!row) {
@@ -63,6 +62,10 @@ module.exports = class DiscordEconomy {
          * @returns {Promise} A promise that contains user balance / money
          */
         this.updateBalance = (ID, money) => { //eslint-disable-line no-unused-vars
+            if (!ID) return new InputError('Please input user ID to fetch the balance');
+            if (isNaN(ID)) return new InputError('Invalid ID');
+            if (!money) return new InputError('Please input a valid money');
+            if (isNaN(ID)) return new InputError('Money should be a number');
             const updateBalance = new Promise((resolve, error) => { //eslint-disable-line
                 function checkIfCreated(ID, money) {
                     db.get(`SELECT * FROM economy WHERE userID = '${ID}'`, (err, row) => {
