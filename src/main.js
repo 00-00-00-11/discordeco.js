@@ -62,6 +62,10 @@ module.exports = class DiscordEconomy {
          * @returns {Promise} A promise that contains user balance / money
          */
         this.updateBalance = (ID, money) => { //eslint-disable-line no-unused-vars
+            if (!ID) return new InputError('Please input user ID to fetch the balance');
+            if (isNaN(ID)) return new InputError('Invalid ID');
+            if (!money) return new InputError('Please input a valid money');
+            if (isNaN(ID)) return new InputError('Money should be a number');
             const updateBalance = new Promise((resolve, error) => { //eslint-disable-line
                 function checkIfCreated(ID, money) {
                     db.get(`SELECT * FROM economy WHERE userID = '${ID}'`, (err, row) => {
