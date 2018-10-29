@@ -28,10 +28,9 @@ module.exports = class DiscordEconomy {
          * @returns {Promise} A promise that contains user balance / money
          */
         this.fetchBalance = (ID) => { //eslint-disable-line no-unused-vars
+            if (!ID) return new InputError('Please input user ID to fetch the balance');
+            if (isNaN(ID)) return new InputError('Invalid ID');
             const fetchBalance = new Promise((resolve) => {
-                if (!ID) return new InputError('Please input user ID to fetch the balance');
-                if (isNaN(ID)) return new InputError('Invalid ID');
-
                 function getBalance(ID) {
                     db.get(`SELECT * FROM economy WHERE userID = '${ID}'`, (err, row) => { //eslint-disable-line
                         if (!row) {
