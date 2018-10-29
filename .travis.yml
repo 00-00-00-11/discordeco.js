@@ -5,7 +5,7 @@ language: node_js
 node_js:
   - 'lts/*'
 
-install: npm i -g eslint
+install: npm install eslint --global
 
 script:
 - npm test
