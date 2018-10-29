@@ -1,4 +1,4 @@
-var Sqlite = require('sqlite3').verbose();
+const { Database } = require('sqlite3');
 var lodash = require('lodash'); //eslint-disable-line no-unused-vars
 const makeError = require('makeerror'); //eslint-disable-line
 const InputError = makeError('InputError'); //eslint-disable-line no-unused-vars
@@ -17,7 +17,7 @@ module.exports = class DiscordEconomy {
         } else {
             var defaultBalance = 0; //eslint-disable-line
         }
-        var db = new Sqlite.Database('economy.sqlite');
+        var db = new Database('economy.sqlite');
         db.run("CREATE TABLE IF NOT EXISTS economy (userID TEXT, money INTEGER)");
 
         //begin of functions
