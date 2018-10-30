@@ -100,8 +100,13 @@ module.exports = class DiscordEconomy {
             return updateBalance;
         };
 
-        this.resetBalance = (ID) => { //eslint-disable-line
-            //TODO: Make this!
+        /**
+         * Daily credit (for daily command)
+         * @param {String} ID userID from an user in Discord
+         * @param {String} DailyMoney Daily Money
+         */
+        this.getDaily = (ID, DailyMoney) => { //eslint-disable-line
+            //TODO: Rewrite maybe?
         };
         
         //end of functions
