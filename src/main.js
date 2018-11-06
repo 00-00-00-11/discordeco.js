@@ -56,7 +56,7 @@ module.exports = class DiscordEconomy {
         };
 
         /**
-         * Fetches a balance from userID
+         * Update user balance
          * @param {String} ID userID from an user in Discord
          * @param {Number} money How much money to add to this ID
          * @returns {Promise} A promise that contains user balance / money
@@ -100,6 +100,47 @@ module.exports = class DiscordEconomy {
             return updateBalance;
         };
 
+        /** Set user balance (NOTE: THIS WILL OVERWRITE LAST USER BALANCE)
+         * Daily credit (for daily command)
+         * @param {String} ID userID from an user in Discord
+         * @param {String} money How much money to set to this ID
+         * @returns {Promise} A promise that contains user balance / money
+         */
+        this.setBalance = (ID, money) => { //eslint-disable-line
+            if (!ID) return new InputError('Please input user ID to fetch the balance');
+            if (isNaN(ID)) return new InputError('Invalid ID');
+            if (!money) return new InputError('Please input a valid money');
+            if (isNaN(ID)) return new InputError('Money should be a number');
+            const setBalance = new Promise((resolve, error) => { //eslint-disable-line
+                function checkIfCreated(ID, money) {
+                    db.get(`SELECT * FROM economy WHERE userID = '${ID}'`, (err, row) => {
+                        if (!row) {
+                            insertFirstMoney(ID);
+                        } else {
+                            db.run(`UPDATE economy SET money = '${money}' WHERE userID = '${ID}'`);
+                            db.get(`SELECT * FROM economy WHERE userID = '${ID}'`, (err, row) => {
+                                resolveDB(row);
+                            });
+                        }
+                    });
+                }
+
+                function insertFirstMoney(ID) {
+                    var stmt = db.prepare('INSERT INTO economy (userID, money) VALUES (?,?)');
+
+                    stmt.run(ID, defaultBalance);
+                }
+
+                function resolveDB(data) {
+                    return resolve(lodash.toNumber(data.money)) //eslint-disable-line
+                }
+
+                checkIfCreated(ID, money);
+
+            });
+            return setBalance;
+        };
+        
         //end of functions
     }
 };
