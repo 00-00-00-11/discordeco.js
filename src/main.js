@@ -65,7 +65,7 @@ module.exports = class DiscordEconomy {
             if (!ID) return new InputError('Please input user ID to fetch the balance');
             if (isNaN(ID)) return new InputError('Invalid ID');
             if (!money) return new InputError('Please input a valid money');
-            if (isNaN(ID)) return new InputError('Money should be a number');
+            if (isNaN(money)) return new InputError('Money should be a number');
             const updateBalance = new Promise((resolve, error) => { //eslint-disable-line
                 function checkIfCreated(ID, money) {
                     db.get(`SELECT * FROM economy WHERE userID = '${ID}'`, (err, row) => {
@@ -111,7 +111,7 @@ module.exports = class DiscordEconomy {
             if (!ID) return new InputError('Please input user ID to fetch the balance');
             if (isNaN(ID)) return new InputError('Invalid ID');
             if (!money) return new InputError('Please input a valid money');
-            if (isNaN(ID)) return new InputError('Money should be a number');
+            if (isNaN(money)) return new InputError('Money should be a number');
             const updateBalance = new Promise((resolve, error) => { //eslint-disable-line
                 function checkIfCreated(ID, money) {
                     db.get(`SELECT * FROM economy WHERE userID = '${ID}'`, (err, row) => {
@@ -155,7 +155,7 @@ module.exports = class DiscordEconomy {
             if (!ID) return new InputError('Please input user ID to fetch the balance');
             if (isNaN(ID)) return new InputError('Invalid ID');
             if (!money) return new InputError('Please input a valid money');
-            if (isNaN(ID)) return new InputError('Money should be a number');
+            if (isNaN(money)) return new InputError('Money should be a number');
             const setBalance = new Promise((resolve, error) => { //eslint-disable-line
                 function checkIfCreated(ID, money) {
                     db.get(`SELECT * FROM economy WHERE userID = '${ID}'`, (err, row) => {
