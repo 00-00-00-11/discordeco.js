@@ -101,7 +101,6 @@ module.exports = class DiscordEconomy {
         };
 
         /** Set user balance (NOTE: THIS WILL OVERWRITE LAST USER BALANCE)
-         * Daily credit (for daily command)
          * @param {String} ID userID from an user in Discord
          * @param {String} money How much money to set to this ID
          * @returns {Promise} A promise that contains user balance / money
