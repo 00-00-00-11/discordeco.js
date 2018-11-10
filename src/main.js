@@ -107,6 +107,7 @@ module.exports = class DiscordEconomy {
          * @returns {Promise} A promise that contains user balance / money
          */
         this.updateBalance = (ID, money) => { //eslint-disable-line no-unused-vars
+            process.emitWarning('updateBalance : use addBalance instead', 'DeprecationWarning');
             if (!ID) return new InputError('Please input user ID to fetch the balance');
             if (isNaN(ID)) return new InputError('Invalid ID');
             if (!money) return new InputError('Please input a valid money');
@@ -121,7 +122,6 @@ module.exports = class DiscordEconomy {
                             var moneyAfter = lodash.toNumber(money);
                             var moneyUpdate = moneyBefore + moneyAfter;
                             //console.log(moneyUpdate);
-                            process.emitWarning('updateBalance : use addBalance instead', 'DeprecationWarning');
                             db.run(`UPDATE economy SET money = '${moneyUpdate}' WHERE userID = '${ID}'`);
                             db.get(`SELECT * FROM economy WHERE userID = '${ID}'`, (err, row) => {
                                 resolveDB(row);
