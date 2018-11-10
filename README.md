@@ -28,7 +28,7 @@ eco.fetchBalance('userID').then(money => { //Fetches balance from an userID
     console.log(money); //log the money
 });
 
-eco.updateBalance('userID', 5000).then(newBalance => { //note : .then(newBalance => { is optional
+eco.addBalance('userID', 5000).then(newBalance => { //note : .then(newBalance => { is optional
     console.log(newBalance);
 });
 ```
