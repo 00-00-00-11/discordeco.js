@@ -188,6 +188,7 @@ module.exports = class DiscordEconomy {
 
         this.getDaily = (ID, dailyMoney) => { //eslint-disable-line
             //TODO:
+            return 'InDevelopment';
         };
         
         //end of functions
