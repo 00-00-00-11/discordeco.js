@@ -35,6 +35,6 @@
   },
   "devDependencies": {
     "discord.js": "^11.4.2",
-    "eslint": "^5.7.0"
+    "eslint": "^6.4.0"
   }
 }
